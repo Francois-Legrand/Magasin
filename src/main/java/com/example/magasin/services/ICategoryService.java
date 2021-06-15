@@ -1,7 +1,6 @@
 package com.example.magasin.services;
 
 import com.example.magasin.dto.CategoryDto;
-import com.example.magasin.models.Categories;
 
 import java.util.List;
 
