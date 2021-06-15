@@ -30,4 +30,8 @@ public class CategoryController {
     public CategoryDto edit(@RequestBody CategoryDto categoryDto){
         return this.service.save(categoryDto);
     }
+    @DeleteMapping({"id"})
+    public void DeleteById(@PathVariable Long id){
+        this.service.deleteById(id);
+    }
 }
