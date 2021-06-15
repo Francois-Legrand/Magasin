@@ -18,7 +18,6 @@ public class CommandeServiceImpl implements ICommandeService {
         this.mapper = mapper;
     }
 
-
     @Override
     public List<CommandeDto> findAll() {
         List<Commandes> commandes = this.repository.findAll();

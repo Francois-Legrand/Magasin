@@ -1,6 +1,5 @@
 package com.example.magasin.repositories;
 
-import com.example.magasin.models.Categories;
 import com.example.magasin.models.Clients;
 import org.springframework.data.jpa.repository.JpaRepository;
 

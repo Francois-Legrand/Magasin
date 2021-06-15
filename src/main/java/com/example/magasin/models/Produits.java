@@ -1,5 +1,6 @@
 package com.example.magasin.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,12 +23,8 @@ public class Produits {
     @ManyToOne
     @JoinColumn(name = "categories_nom")
     private Categories categories;
-
-    @ManyToMany
-    @JoinTable(name = "produits_commandes_link",
-            joinColumns = @JoinColumn(name = "produits_id"),
-            inverseJoinColumns = @JoinColumn(name = "commandes_id"))
+    @JsonIgnore
+    @ManyToMany(mappedBy = "produits")
     private List<Commandes> commandes;
-
 
 }

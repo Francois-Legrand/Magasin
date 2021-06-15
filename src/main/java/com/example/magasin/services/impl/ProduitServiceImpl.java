@@ -21,29 +21,27 @@ public class ProduitServiceImpl implements IProduitService {
     @Override
     public List<ProduitDto> findAll() {
         List<Produits> produits = this.repository.findAll();
-        List<ProduitDto> produitsDto = new ArrayList<>();
-        produits.forEach(produit ->{
-            produitsDto.add(
-                    this.mapper.convertValue(produit, ProduitDto.class)
-            );
+        List<ProduitDto> produitDto = new ArrayList<>();
+        produits.forEach(p -> {
+          produitDto.add(
+                  this.mapper.convertValue(p, ProduitDto.class)
+          );
         });
-
-        return produitsDto;
+        return produitDto;
     }
 
     @Override
     public ProduitDto findById(Long id) {
-        return mapper.convertValue(this.repository.findById(id).get(), ProduitDto.class);
+        return null;
     }
 
     @Override
     public ProduitDto save(ProduitDto produitDto) {
-        Produits produit = mapper.convertValue(produitDto, Produits.class);
-        return mapper.convertValue(this.repository.save(produit), ProduitDto.class);
+        return null;
     }
 
     @Override
     public void deleteById(Long id) {
-        this.repository.deleteById(id);
+
     }
 }

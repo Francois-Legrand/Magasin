@@ -18,7 +18,6 @@ public class ClientServiceImpl implements IClientService {
         this.mapper = mapper;
     }
 
-
     @Override
     public List<ClientDto> findAll() {
         List<Clients> clients = this.repository.findAll();

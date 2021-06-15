@@ -1,5 +1,6 @@
 package com.example.magasin.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,7 +21,6 @@ public class Commandes {
     @ManyToOne
     @JoinColumn(name = "clients_id")
     private Clients clients;
-
     @ManyToMany
     @JoinTable(name = "produits_commandes_link",
             joinColumns = @JoinColumn(name = "commandes_id"),

@@ -30,7 +30,7 @@ public class ClientController {
     public ClientDto edit(@RequestBody ClientDto clientDto){
         return this.service.save(clientDto);
     }
-    @DeleteMapping({"id"})
+    @DeleteMapping({"{id}"})
     public void DeleteById(@PathVariable Long id){
         this.service.deleteById(id);
     }

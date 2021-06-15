@@ -23,11 +23,14 @@ public class Config {
         return new ClientServiceImpl(clientRepository, mapper);
     }
     @Bean
-    public CommandeServiceImpl commandeService(CommandeRepository commandeRepository, ObjectMapper mapper){
-        return new CommandeServiceImpl(commandeRepository, mapper);
-    }
-    @Bean
     public ProduitServiceImpl produitService(ProduitRepository produitRepository, ObjectMapper mapper){
         return new ProduitServiceImpl(produitRepository, mapper);
     }
+
+    @Bean
+    public CommandeServiceImpl commandeService(CommandeRepository commandeRepository, ObjectMapper mapper){
+        return new CommandeServiceImpl(commandeRepository, mapper);
+    }
+
+
 }

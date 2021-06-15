@@ -1,10 +1,7 @@
 package com.example.magasin.services;
-
-
 import com.example.magasin.dto.CommandeDto;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface ICommandeService {
     List<CommandeDto> findAll();

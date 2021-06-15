@@ -1,8 +1,6 @@
 package com.example.magasin.controllers;
 
-import com.example.magasin.dto.ClientDto;
 import com.example.magasin.dto.CommandeDto;
-import com.example.magasin.services.impl.ClientServiceImpl;
 import com.example.magasin.services.impl.CommandeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -32,7 +30,7 @@ public class CommandeController {
     public CommandeDto edit(@RequestBody CommandeDto commandeDto){
         return this.service.save(commandeDto);
     }
-    @DeleteMapping({"id"})
+    @DeleteMapping({"{id}"})
     public void DeleteById(@PathVariable Long id){
         this.service.deleteById(id);
     }
