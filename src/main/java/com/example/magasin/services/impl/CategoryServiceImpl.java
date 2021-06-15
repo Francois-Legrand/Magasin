@@ -5,12 +5,9 @@ import com.example.magasin.models.Categories;
 import com.example.magasin.repositories.CategoryRepository;
 import com.example.magasin.services.ICategoryService;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class CategoryServiceImpl implements ICategoryService {
     private final CategoryRepository repository;
@@ -34,18 +31,17 @@ public class CategoryServiceImpl implements ICategoryService {
     }
 
     @Override
-    public Optional<CategoryDto> findById(Long id) {
-        //Optional<Categories> category = this.repository.findAllById(id);
-
+    public CategoryDto findById(Long id) {
+        return mapper.convertValue(this.repository.findById(id).get(), CategoryDto.class);
     }
 
     @Override
-    public CategoryDto save(CategoryDto categoryDto) {
-        return null;
+    public CategoryDto save(Categories category) {
+        return mapper.convertValue(this.repository.save(category), CategoryDto.class);
     }
 
     @Override
     public void deleteById(Long id) {
-
+        this.repository.deleteById(id);
     }
 }

@@ -1,13 +1,13 @@
 package com.example.magasin.services;
 
 import com.example.magasin.dto.CategoryDto;
+import com.example.magasin.models.Categories;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface ICategoryService {
     List<CategoryDto> findAll();
-    Optional<CategoryDto> findById(Long id);
-    CategoryDto save(CategoryDto categoryDto);
+    CategoryDto findById(Long id);
+    CategoryDto save(Categories category);
     void deleteById(Long id);
 }
