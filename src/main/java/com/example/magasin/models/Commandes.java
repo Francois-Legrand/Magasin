@@ -21,8 +21,9 @@ public class Commandes {
     @ManyToOne
     @JoinColumn(name = "clients_id")
     private Clients clients;
+
     @ManyToMany
-    @JoinTable(name = "produits_commandes_link",
+    @JoinTable(name = "produits_commandes",
             joinColumns = @JoinColumn(name = "commandes_id"),
             inverseJoinColumns = @JoinColumn(name = "produits_id"))
     private List<Produits> produits;

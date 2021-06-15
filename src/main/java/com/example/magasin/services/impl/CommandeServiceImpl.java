@@ -1,6 +1,8 @@
 package com.example.magasin.services.impl;
 
+import com.example.magasin.dto.ClientDto;
 import com.example.magasin.dto.CommandeDto;
+import com.example.magasin.models.Clients;
 import com.example.magasin.models.Commandes;
 import com.example.magasin.repositories.CommandeRepository;
 import com.example.magasin.services.ICommandeService;
@@ -8,6 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class CommandeServiceImpl implements ICommandeService {
     private final CommandeRepository repository;
@@ -40,10 +43,13 @@ public class CommandeServiceImpl implements ICommandeService {
     public CommandeDto save(CommandeDto commandeDto) {
         Commandes commande = mapper.convertValue(commandeDto, Commandes.class);
         return mapper.convertValue(this.repository.save(commande), CommandeDto.class);
+
     }
 
     @Override
     public void deleteById(Long id) {
         this.repository.deleteById(id);
     }
+
+
 }

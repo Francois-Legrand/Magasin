@@ -46,4 +46,6 @@ public class ClientServiceImpl implements IClientService {
     public void deleteById(Long id) {
         this.repository.deleteById(id);
     }
+
+
 }

@@ -34,4 +34,10 @@ public class ProduitController {
     public void DeleteById(@PathVariable Long id){
         this.service.deleteById(id);
     }
+    @GetMapping("commandeUtil/{id}")
+    public void commandeUtilisateur(@PathVariable Long id){
+
+        this.service.getAllCommandeFromUser(id);
+    }
+
 }

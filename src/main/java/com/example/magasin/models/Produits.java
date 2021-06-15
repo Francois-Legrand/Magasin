@@ -1,9 +1,7 @@
 package com.example.magasin.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -12,7 +10,9 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="produits")
+@Table(name = "produits")
+@Getter
+@Setter
 public class Produits {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,7 @@ public class Produits {
     private int prix;
 
     @ManyToOne
-    @JoinColumn(name = "categories_nom")
+    @JoinColumn(name = "categories_id")
     private Categories categories;
     @JsonIgnore
     @ManyToMany(mappedBy = "produits")
