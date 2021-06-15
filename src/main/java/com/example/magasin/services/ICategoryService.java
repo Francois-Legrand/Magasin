@@ -8,6 +8,6 @@ import java.util.List;
 public interface ICategoryService {
     List<CategoryDto> findAll();
     CategoryDto findById(Long id);
-    CategoryDto save(Categories category);
+    CategoryDto save(CategoryDto category);
     void deleteById(Long id);
 }

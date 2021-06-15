@@ -36,7 +36,8 @@ public class CategoryServiceImpl implements ICategoryService {
     }
 
     @Override
-    public CategoryDto save(Categories category) {
+    public CategoryDto save(CategoryDto categoryDto) {
+        Categories category = mapper.convertValue(categoryDto, Categories.class);
         return mapper.convertValue(this.repository.save(category), CategoryDto.class);
     }
 
